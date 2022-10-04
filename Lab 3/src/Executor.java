@@ -3,8 +3,8 @@ public class Executor extends Plebeian {
         super(name, age, country);
     }
 
-    public String chopHead(String newName) {
-        return "Chopped"+ newName +"head";
+    public void chopHead(String newName) {
+        System.out.println(getName() + " chopped " + newName + "'s head off!");
     }
 
 }

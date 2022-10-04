@@ -1,7 +1,4 @@
 public class Judge extends Nobility {
-    private String name;
-    private int age;
-    private String country;
 
     public Judge(String name,String familyName, int age, String country) {
         super(name, familyName, age, country);

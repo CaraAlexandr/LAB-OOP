@@ -3,8 +3,8 @@ public class Duke extends Nobility {
         super(name,familyName, age, country);
     }
 
-    public String party() {
-        return "I'm a Duke and I'm partying!";
+    public void party() {
+        System.out.println(getName() + " is throwing a party");
     }
 
     public int takeLand(){

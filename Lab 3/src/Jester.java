@@ -1,14 +1,9 @@
 import java.util.Random;
 
-public class Jester {
-    private String name;
-    private int age;
-    private String country;
+public class Jester extends Plebeian {
 
     public Jester(String name, int age, String country) {
-        this.name = name;
-        this.age = age;
-        this.country = country;
+        super(name, age, country);
     }
 
     public int randomInt(int min, int max) {
@@ -31,16 +26,4 @@ public class Jester {
         }
 
         }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 }

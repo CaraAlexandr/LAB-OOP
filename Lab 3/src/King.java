@@ -18,12 +18,6 @@ public class King extends Nobility {
         System.out.println("Duke " + name + " has been declared!");
         return new Duke(name,familyName, age, country);
     }
-
-    public Peasant declarePeasant(String name, int age, String country){
-        System.out.println("Peasant " + name + " has been declared!");
-        return new Peasant(name, age, country);
-    }
-
     public Jester declareJester(String name, int age, String country){
         System.out.println("Jester " + name + " has been declared!");
         return new Jester(name, age, country);

@@ -3,7 +3,7 @@ public class Peasant {
     private int age;
     private String country;
 
-    public Peasant(String name, int age, String country) {
+    public Peasant(String name, int age, String country,boolean status) {
         this.name = name;
         this.age = age;
         this.country = country;
