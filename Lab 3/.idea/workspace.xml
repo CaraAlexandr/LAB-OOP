@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79569f7d-a029-4159-b33c-08bfd1ee7009" name="Changes" comment="Lab 3" />
+    <list default="true" id="79569f7d-a029-4159-b33c-08bfd1ee7009" name="Changes" comment="Lab 3">
+      <change beforePath="$PROJECT_DIR$/../LAB 1/queue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB 1/queue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab 2/src/Judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab 2/src/Judge.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/alex-root/Documents/LAB-OOP/Lab 2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -69,6 +73,12 @@
       <workItem from="1664710276028" duration="9235000" />
       <workItem from="1664867450003" duration="2402000" />
       <workItem from="1664875214761" duration="1968000" />
+      <workItem from="1664883292207" duration="207000" />
+      <workItem from="1664883510367" duration="380000" />
+      <workItem from="1664888018308" duration="471000" />
+      <workItem from="1664888500123" duration="1101000" />
+      <workItem from="1664889610109" duration="3142000" />
+      <workItem from="1665067247168" duration="2274000" />
     </task>
     <servers />
   </component>

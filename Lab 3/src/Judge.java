@@ -4,13 +4,11 @@ public class Judge extends Nobility {
         super(name, familyName, age, country);
     }
 
-    public boolean accuse() {
+    public void accuse(String newName) {
         if(Math.random() > 0.5) {
-            System.out.println("Guilty!");
-            return true;
+            System.out.println(newName + " is guilty!");
         } else {
-            System.out.println("Not guilty!");
-            return false;
+            System.out.println(newName + " is innocent!");
         }
     }
 }

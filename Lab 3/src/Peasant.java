@@ -1,12 +1,7 @@
-public class Peasant {
-    private String name;
-    private int age;
-    private String country;
+public class Peasant extends Plebeian {
 
     public Peasant(String name, int age, String country,boolean status) {
-        this.name = name;
-        this.age = age;
-        this.country = country;
+        super(name, age, country);
     }
 
     public String work() {
@@ -15,19 +10,5 @@ public class Peasant {
 
     public String sleep() {
         return getName() + "is sleeping!";
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getCountry() {
-        return country;
     }
 }

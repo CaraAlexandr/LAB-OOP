@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Cardinal cardinal = new Cardinal("John","Balls breaker", 45, "Italy");
+        Cardinal cardinal = new Cardinal("John","Balls ", 45, "Italy");
         cardinal.setFamilyName("Balls");
         cardinal.setFamilyWealth(1000000);
         System.out.println(cardinal.getName() + " " + cardinal.getFamilyName() + " is a cardinal from " + cardinal.getCountry() + " and has " + cardinal.getFamilyWealth() + " in gold.");
@@ -32,12 +32,14 @@ public class Main {
 
 
         Duke duke2 = new Duke("Vova","Switchblade", 25, "Italy");
-        Duke duke3 = new Duke("Anton","Bobic", 57, "Italy");
+        Duke duke3 = new Duke("Anton","Howard", 57, "Italy");
         Duke duke4 = new Duke("Veronika","Strudel", 25, "Italy");
 
+        Judge judge = king.declareJudge(duke2.getName(), duke2.getFamilyName(), duke2.getAge(), duke2.getCountry());
+        judge.accuse(peasant4.getName());
 
-
-
+        Queen queen = king.declareQueen(duke4.getName(), duke4.getFamilyName(), duke4.getAge(), duke4.getCountry());
+        queen.giveBirth();
 
     }
 

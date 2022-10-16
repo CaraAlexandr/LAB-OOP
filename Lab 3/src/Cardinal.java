@@ -16,7 +16,6 @@ public class Cardinal extends Nobility {
         return king ;
     }
 
-
     public String askGodForHelp() {
         if(Math.random() > 0.5) {
             return "God said, Yes!";
