@@ -1,57 +1,180 @@
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        Cardinal cardinal = new Cardinal("John","Balls ", 45, "Italy");
-        cardinal.setFamilyName("Balls");
-        cardinal.setFamilyWealth(1000000);
-        System.out.println(cardinal.getName() + " " + cardinal.getFamilyName() + " is a cardinal from " + cardinal.getCountry() + " and has " + cardinal.getFamilyWealth() + " in gold.");
 
-        System.out.println(cardinal.askGodForHelp());
+    private static int input;
 
-        Duke duke = new Duke("Michael","Charleston", 45, "Italy");
-
-        duke.party();
-
-        King king = cardinal.declareKing(duke.getName(), duke.getFamilyName(), duke.getAge(), duke.getCountry());
-
-        System.out.println("");
-        System.out.println("========================================");
-
-
-        Peasant peasant1 = new Peasant("John", 78, "Italy",true);
-        Peasant peasant2 = new Peasant("Michael", 23, "Italy",false);
-        Peasant peasant3 = new Peasant("Jack", 14, "Italy",false);
-        Peasant peasant4 = new Peasant("Bob", 55, "Italy", false);
-
-        Jester jester = king.declareJester(peasant1.getName(), peasant1.getAge(), peasant1.getCountry());
-        System.out.println(jester.getName() + " is a jester from " + jester.getCountry() + " and is " + jester.getAge() + " years old.");
-        System.out.println(jester.tellJoke());
-
-        Executor executor = king.declareExecutor(peasant2.getName(), peasant2.getAge(), peasant2.getCountry());
-        System.out.println(executor.getName() + " is an executor from " + executor.getCountry() + " and is " + executor.getAge() + " years old.");
-        executor.chopHead(jester.getName());
-
-        Knight knight = king.declareKnight(peasant3.getName(), peasant3.getAge(), peasant3.getCountry());
-        knight.train();
-
-        System.out.println("");
-        System.out.println("========================================");
-
-        Duke duke2 = new Duke("Vova","Switchblade", 25, "Italy");
-        Duke duke3 = new Duke("Anton","Howard", 57, "Italy");
-        Duke duke4 = new Duke("Veronika","Strudel", 25, "Italy");
-
-        Judge judge = king.declareJudge(duke2.getName(), duke2.getFamilyName(), duke2.getAge(), duke2.getCountry());
-        judge.accuse(peasant4.getName());
-
-        System.out.println(duke3.getName() + " is " + duke3.sleep());
-
-        System.out.println("");
-        System.out.println("========================================");
-
-        Queen queen = king.declareQueen(duke4.getName(), duke4.getFamilyName(), duke4.getAge(), duke4.getCountry());
-        queen.giveBirth();
-
-
+    public static String bars(int num) {
+        String result = "";
+        for (int i = 0; i < num; i+=10) {
+            result += "|";
+        }
+        return result;
     }
 
+    public static String readString(String prompt) {
+        Scanner in = new Scanner(System.in);
+        System.out.print(prompt);
+        return in.nextLine();
+    }
+
+    public static int randInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+        System.out.println("Welcome to the Kingdom of Java!");
+        System.out.println("You are the king of this kingdom.");
+        System.out.println("What is your name?");
+        String kingName = readString("King Name: ");
+        System.out.println("What is your family name?");
+        String kingFamilyName = readString("King Family Name: ");
+        System.out.println("What is your age?");
+        int kingAge = Integer.parseInt(readString("King Age: "));
+        King king = new King(kingName, kingFamilyName, kingAge,"Java");
+        System.out.println("Hello" + " " + kingName + " " + kingFamilyName + " " + "the" + " " + kingAge + " " + "year old king of Java!"+ "\n");
+
+
+        Config.changeProfile();
+
+        int peasantHappiness = Config.peasantHappiness ;
+        int dukeHappiness = Config.dukeHappiness ;
+        int wealth = Config.wealth ;
+
+
+
+        System.out.println("Peasant happiness: " + bars(peasantHappiness));
+        System.out.println("Duke happiness:    " + bars(dukeHappiness));
+        System.out.println("Wealth:            " + bars(wealth));
+
+
+
+        while (true){
+            System.out.println();
+            System.out.println("===============================================");
+            System.out.println();
+            System.out.println("1 : yes");
+            System.out.println("2 : no");
+            System.out.println("3 : show happiness meters");
+            System.out.println();
+            int input = randInt(1, 2);
+
+            switch ( input ) {
+
+                case 1:
+                    System.out.println("You chose YES");
+                    break;
+                case 2:
+                    System.out.println("You chose NO");
+                    break;
+                default:
+                    System.out.println("You chose something else");
+                    break;
+            }
+            System.out.println();
+
+            System.out.println("Peasant happiness: " + bars(peasantHappiness));
+            System.out.println("Duke happiness:    " + bars(dukeHappiness));
+            System.out.println("Wealth:            " + bars(wealth));
+            System.out.println();
+            System.out.println("===============================================");
+            System.out.println();
+
+            int inputStory = randInt(1, 5);
+
+            switch (inputStory) {
+                case 1:
+                    Config.story_1(input);
+                    if (input==1){
+                        peasantHappiness = peasantHappiness + 20;
+                        dukeHappiness = dukeHappiness + 20;
+                        wealth = wealth - 10;
+                    }
+                    else if (input==2){
+                        dukeHappiness = dukeHappiness - 20;
+                    }
+                    break;
+                case 2:
+                    Config.story_2(input);
+                    if (input==1){
+                        peasantHappiness = peasantHappiness - 20;
+                        dukeHappiness = dukeHappiness + 20;
+                        wealth = wealth - 10;
+                    }
+                    else if (input==2){
+                        peasantHappiness = peasantHappiness - 100;
+                        dukeHappiness = dukeHappiness - 100;
+                        wealth = wealth - 100;
+                    }
+
+                    break;
+                case 3:
+                    Config.story_3(input);
+                    if (input == 1) {
+                        peasantHappiness = peasantHappiness + 20;
+                        dukeHappiness = dukeHappiness + 20;
+                        wealth = wealth - 10;
+                    } else if (input == 2) {
+                        peasantHappiness = peasantHappiness - 20;
+                        dukeHappiness = dukeHappiness - 20;
+                        wealth = wealth + 10;
+                    }
+                    break;
+                case 4:
+                    Config.story_4(input);
+                    if (input==1){
+                        peasantHappiness = peasantHappiness + 20;
+                        wealth = wealth + 20;
+                        System.out.println("They were hiding a treasure from another kingdom. You found it.");
+                    }
+                    else if (input==2){
+                        peasantHappiness = peasantHappiness -5;
+                        dukeHappiness = dukeHappiness -5;
+                        wealth = wealth -5;
+                        System.out.println("They got into the vault, stole some treasure and killed a bunch of guards");
+                    }
+
+                    break;
+                case 5:
+                    Config.story_5(input);
+                    switch (input){
+                        case 1:
+                            Queen queen = new Queen("Fiona", "Traumberg", 25, "Unknown");
+                            peasantHappiness = peasantHappiness + 20;
+                            dukeHappiness += 20;
+                            wealth += 10;
+
+                        case 2:
+                            peasantHappiness = peasantHappiness - 20;
+                            dukeHappiness -= 20;
+                            wealth -= 10;
+
+                        default:
+                            Queen queen1 = new Queen("Fiona", "Traumberg", 25, "Unknown");
+                            peasantHappiness = peasantHappiness + 20;
+                            dukeHappiness = dukeHappiness + 20;
+                            wealth = wealth + 10;
+                    }
+                    break;
+                default:
+                    System.out.println("You chose something else");
+                    break;
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            if (peasantHappiness <= 0 || dukeHappiness <= 0 || wealth <= 0) {
+                System.out.println("Game Over");
+                break;
+            }
+        }
+    }
 }

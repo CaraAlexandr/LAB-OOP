@@ -1,5 +1,5 @@
 public class Person implements Human {
-    private String name;
+    private final String name;
     protected int age;
     protected String country;
 

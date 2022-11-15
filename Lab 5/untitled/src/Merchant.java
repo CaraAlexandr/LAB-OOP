@@ -3,11 +3,11 @@ public class Merchant extends Plebeian {
         super(name, age, country);
     }
 
-    public void getStock(String stock[]){
+    public void getStock(String[] stock){
         System.out.println("Stock: " + stock);
     }
 
-    public String showStock(String stock[]){
+    public String showStock(String[] stock){
         return "Stock: " + stock;
     }
 

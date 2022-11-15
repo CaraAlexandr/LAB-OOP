@@ -5,7 +5,7 @@ public class Knight extends Plebeian {
     }
 
     public void fightForKingdom() {
-        System.out.println(getName()+" is fighting for the kingdom");;
+        System.out.println(getName()+" is fighting for the kingdom");
     }
 
     public void train() {

@@ -1,4 +1,6 @@
+
 public interface Human {
+
     String work();
     String sleep();
     String eat();
