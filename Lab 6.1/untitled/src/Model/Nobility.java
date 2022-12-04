@@ -23,17 +23,5 @@ public class Nobility extends Person {
     public int getFamilyWealth() {
         return familyWealth;
     }
-
-    public String getFirstName() {
-        return getName();
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setFirstName(String firstName) {
-        this.name = firstName;
-    }
 }
 

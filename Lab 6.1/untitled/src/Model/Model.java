@@ -1,12 +1,14 @@
-import Model.Config;
-import Model.King;
-import Model.Queen;
+package Model;
 
+import Model.King;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Scanner;
-public class Main {
 
-    private static int input;
+public class Model  {
+
+    String kingName;
+    String kingFamilyName;
+    int kingAge;
 
     public static String bars(int num) {
         String result = "";
@@ -16,32 +18,30 @@ public class Main {
         return result;
     }
 
-    public static String readString(String prompt) {
-        Scanner in = new Scanner(System.in);
-        System.out.print(prompt);
-        return in.nextLine();
-    }
-
     public static int randInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
+    public void setKingName(String kingName) {
+        this.kingName = kingName;
+    }
+
+    public void setKingFamilyName(String kingFamilyName) {
+        this.kingFamilyName = kingFamilyName;
+    }
+
+    public void setKingAge(int kingAge) {
+        this.kingAge = kingAge;
+    }
 
 
 
-    public static void main(String[] args) {
+    public void simulate() {
+        
+        
 
-        System.out.println("Welcome to the Kingdom of Java!");
-        System.out.println("You are the king of this kingdom.");
-        System.out.println("What is your name?");
-        String kingName = readString("Model.King Name: ");
-        System.out.println("What is your family name?");
-        String kingFamilyName = readString("Model.King Family Name: ");
-        System.out.println("What is your age?");
-        int kingAge = Integer.parseInt(readString("Model.King Age: "));
         King king = new King(kingName, kingFamilyName, kingAge,"Java");
-        System.out.println("Hello" + " " + kingName + " " + kingFamilyName + " " + "the" + " " + kingAge + " " + "year old king of Java!"+ "\n");
-
+ 
 
         Config.changeProfile();
 
@@ -51,8 +51,8 @@ public class Main {
 
 
 
-        System.out.println("Model.Peasant happiness: " + bars(peasantHappiness));
-        System.out.println("Model.Duke happiness:    " + bars(dukeHappiness));
+        System.out.println("Peasant happiness: " + bars(peasantHappiness));
+        System.out.println("Duke happiness:    " + bars(dukeHappiness));
         System.out.println("Wealth:            " + bars(wealth));
 
 
@@ -81,8 +81,8 @@ public class Main {
             }
             System.out.println();
 
-            System.out.println("Model.Peasant happiness: " + bars(peasantHappiness));
-            System.out.println("Model.Duke happiness:    " + bars(dukeHappiness));
+            System.out.println("Peasant happiness: " + bars(peasantHappiness));
+            System.out.println("Duke happiness:    " + bars(dukeHappiness));
             System.out.println("Wealth:            " + bars(wealth));
             System.out.println();
             System.out.println("===============================================");

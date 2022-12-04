@@ -1,12 +1,63 @@
-import Model.Config;
-import Model.King;
-import Model.Queen;
+package Controller;
+import View.*;
+import Model.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Scanner;
-public class Main {
 
-    private static int input;
+public class Controller {
+
+    private KingdomView theView;
+    private Model theModel;
+
+    public Controller(KingdomView theView, Model theModel) {
+        this.theView = theView;
+        this.theModel = theModel;
+        this.theView.addSubmitListener(new submitListener());
+    }
+
+    class submitListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String firstName = "";
+            String familyName = "";
+            int age = 0;
+            try {
+                firstName = theView.getName();
+                familyName = theView.getFamilyName();
+                age = theView.getAge();
+            } catch (NumberFormatException ex) {
+                theView.displayErrorMessage("You need to enter 3 valid statements");
+            }
+            theModel.setName(firstName);
+            theModel.setFamilyName(familyName);
+            theModel.setAge(age);
+            theView.setName(theModel.getFirstName());
+            theView.setFamilyName(theModel.getFamilyName());
+            theView.setAge(theModel.getAge());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static String bars(int num) {
         String result = "";
@@ -27,21 +78,7 @@ public class Main {
     }
 
 
-
-
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to the Kingdom of Java!");
-        System.out.println("You are the king of this kingdom.");
-        System.out.println("What is your name?");
-        String kingName = readString("Model.King Name: ");
-        System.out.println("What is your family name?");
-        String kingFamilyName = readString("Model.King Family Name: ");
-        System.out.println("What is your age?");
-        int kingAge = Integer.parseInt(readString("Model.King Age: "));
-        King king = new King(kingName, kingFamilyName, kingAge,"Java");
-        System.out.println("Hello" + " " + kingName + " " + kingFamilyName + " " + "the" + " " + kingAge + " " + "year old king of Java!"+ "\n");
-
+    public void simulation() {
 
         Config.changeProfile();
 
@@ -178,7 +215,9 @@ public class Main {
             if (peasantHappiness <= 0 || dukeHappiness <= 0 || wealth <= 0) {
                 System.out.println("Game Over");
                 break;
-            }
+
+    }
+
         }
     }
 }

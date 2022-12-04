@@ -7,13 +7,6 @@ public class King extends Nobility {
         this.age = age;
     }
 
-    public void setFirstName(String firstName) {
-        this.name = firstName;
-    }
-    public String getFirstName() {
-        return this.name = getName();
-    }
-
 
     public String declareWar(String enemy) {
         return "I declare war on " + enemy + "!";
@@ -52,7 +45,7 @@ public class King extends Nobility {
         return new Merchant(name, age, country);
     }
 
-    public Queen declareQueen(String name, String familyName , int age, String country){
+    public Queen declareQueen(String name,String familyName , int age, String country){
         System.out.println("Model.Queen " + name + " has been declared!");
         return new Queen(name,familyName , age, country);
     }

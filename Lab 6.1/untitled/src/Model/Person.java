@@ -1,7 +1,7 @@
 package Model;
 
 public class Person implements Human {
-    public String name;
+    private final String name;
     protected int age;
     protected String country;
 
