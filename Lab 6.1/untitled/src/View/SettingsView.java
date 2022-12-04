@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class View extends JFrame {
+public class SettingsView extends JFrame {
     private JTextField name = new JTextField(10);
     private JTextField familyName = new JTextField(10);
     private JTextField age = new JTextField(10);
@@ -14,11 +14,8 @@ public class View extends JFrame {
     private JRadioButton medium = new JRadioButton("Medium");
     private JRadioButton hard = new JRadioButton("Hard");
 
-    private JButton yes = new JButton("Yes");
-    private JButton no = new JButton("No");
 
-
-    public View() {
+    public SettingsView() {
         super("Settings");
         JPanel panel = new JPanel();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,6 +50,16 @@ public class View extends JFrame {
 
     public String getFamilyName() {
         return familyName.getText();
+    }
+
+    public String difficulty() {
+        if (easy.isSelected()) {
+            return "easy";
+        } else if (medium.isSelected()) {
+            return "medium";
+        } else {
+            return "hard";
+        }
     }
 
     public int getAge() {

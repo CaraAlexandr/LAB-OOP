@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Model  {
 
+    String difficulty;
     String kingName;
     String kingFamilyName;
     int kingAge;
@@ -33,6 +34,9 @@ public class Model  {
     public void setKingAge(int kingAge) {
         this.kingAge = kingAge;
     }
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
 
 
 
@@ -43,7 +47,7 @@ public class Model  {
         King king = new King(kingName, kingFamilyName, kingAge,"Java");
  
 
-        Config.changeProfile();
+        Config.changeProfile(difficulty);
 
         int peasantHappiness = Config.peasantHappiness ;
         int dukeHappiness = Config.dukeHappiness ;

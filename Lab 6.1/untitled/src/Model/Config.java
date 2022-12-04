@@ -14,34 +14,34 @@ public abstract class Config {
     public static int wealth = 15;
 
 
-    public static int profile = 1; // profile: 1, 2, 3, 4, 5
+    public static String profile = "medium"; // profile: 1, 2, 3, 4, 5
 
 
-    public static void changeProfile() {
+    public static void changeProfile(String profile) {
         Config.profile = profile;
         switch (profile) {
-            case 1:
+            case "easy":
                 System.out.println("Profile 1");
                 System.out.println("Easy mode");
                 peasantHappiness = 85;
                 dukeHappiness = 85;
                 wealth = 85;
                 break;
-            case 2:
+            case "wealthy":
                 System.out.println("Profile 2");
                 System.out.println("Wealthy mode");
                 peasantHappiness = 15;
                 dukeHappiness = 15;
                 wealth = 85;
                 break;
-            case 3:
+            case "medium":
                 System.out.println("Profile 3");
                 System.out.println("Basic mode");
                 peasantHappiness = 50;
                 dukeHappiness = 50;
                 wealth = 50;
                 break;
-            case 4:
+            case "hard":
                 System.out.println("Profile 4");
                 System.out.println("Hard mode");
                 peasantHappiness = 10;
