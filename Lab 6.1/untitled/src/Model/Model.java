@@ -1,15 +1,14 @@
 package Model;
 
-import Model.King;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.Scanner;
+
 
 public class Model  {
 
-    String difficulty;
-    String kingName;
-    String kingFamilyName;
-    int kingAge;
+    static String difficulty;
+    static String kingName;
+    static String kingFamilyName;
+    static int kingAge;
 
     public static String bars(int num) {
         String result = "";
@@ -27,6 +26,10 @@ public class Model  {
         this.kingName = kingName;
     }
 
+    public String getKingName() {
+        return kingName;
+    }
+
     public void setKingFamilyName(String kingFamilyName) {
         this.kingFamilyName = kingFamilyName;
     }
@@ -34,18 +37,16 @@ public class Model  {
     public void setKingAge(int kingAge) {
         this.kingAge = kingAge;
     }
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
+    public void setDifficulty(String difficulty1) {
+        this.difficulty = difficulty1;
     }
 
 
 
-    public void simulate() {
-        
-        
+    public static void simulate() {
 
         King king = new King(kingName, kingFamilyName, kingAge,"Java");
- 
+        System.out.println("King " + king.getName() + " " + king.getFamilyName() + " is " + king.getAge() + " years old.");
 
         Config.changeProfile(difficulty);
 

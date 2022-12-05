@@ -14,12 +14,13 @@ public abstract class Config {
     public static int wealth = 15;
 
 
-    public static String profile = "medium"; // profile: 1, 2, 3, 4, 5
+    public static String difficulty = "medium"; // profile: 1, 2, 3, 4, 5
 
 
     public static void changeProfile(String profile) {
-        Config.profile = profile;
-        switch (profile) {
+        difficulty = profile;
+
+        switch (difficulty) {
             case "easy":
                 System.out.println("Profile 1");
                 System.out.println("Easy mode");

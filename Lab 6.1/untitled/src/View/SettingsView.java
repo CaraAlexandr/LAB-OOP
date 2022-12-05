@@ -52,7 +52,7 @@ public class SettingsView extends JFrame {
         return familyName.getText();
     }
 
-    public String difficulty() {
+    public String setDifficulty() {
         if (easy.isSelected()) {
             return "easy";
         } else if (medium.isSelected()) {

@@ -4,6 +4,7 @@ import View.SettingsView;
 
 public class Main {
 
+
     public static void main(String[] args) {
         SettingsView theSettingsView = new SettingsView();
         GameView theGameView = new GameView();
@@ -13,6 +14,14 @@ public class Main {
         theSettingsView.setVisible(true);
         theGameView.setVisible(true);
 
+        while (theModel.getKingName() == null) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        Model.simulate();
     }
 
 }
